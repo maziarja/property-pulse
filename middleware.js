@@ -17,7 +17,7 @@ export async function middleware(req) {
   return NextResponse.next();
 }
 
-export const config = {
-  matcher: ["/properties/add", "/profile", "/properties/saved", "/messages"],
-  runtime: "nodejs",
-};
+// export const config = {
+//   matcher: ["/properties/add", "/profile", "/properties/saved", "/messages"],
+//   runtime: "nodejs",
+// };
