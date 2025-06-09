@@ -7,7 +7,8 @@ import { getToken } from "next-auth/jwt";
 
 export async function middleware(req) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-
+  console.log("TOKEN:", token);
+  console.log("COOKIES:", req.cookies.getAll());
   if (!token) {
     // return new NextResponse("Unauthorized", { status: 401 });
     return NextResponse.redirect(new URL("/", req.url));
