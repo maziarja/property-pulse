@@ -11,13 +11,13 @@ export async function middleware(req) {
   console.log("COOKIES:", req.cookies.getAll());
   if (!token) {
     // return new NextResponse("Unauthorized", { status: 401 });
-    return NextResponse.redirect(new URL("/", req.url));
+    // return NextResponse.redirect(new URL("/", req.url));
   }
 
   return NextResponse.next();
 }
 
-// export const config = {
-//   matcher: ["/properties/add", "/profile", "/properties/saved", "/messages"],
-//   runtime: "nodejs",
-// };
+export const config = {
+  matcher: ["/properties/add", "/profile", "/properties/saved", "/messages"],
+  runtime: "nodejs",
+};
